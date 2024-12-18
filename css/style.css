@@ -1,6 +1,8 @@
+/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Doto:wght,ROND@100..900,0..100&display=swap');
 
-html, head,  body {
+/* Reset default margins and paddings, and set default font */
+html, head, body {
     margin: 0;
     padding: 0;
     font-family: "Doto", serif;
@@ -8,44 +10,42 @@ html, head,  body {
     font-style: normal;
 }
 
+/* Style for anchor tags */
 a {
     text-decoration: none;
     color: #ffffff;
 }
 
+/* Hover effect for anchor tags */
 a:hover {
     color: #606060;
 }
 
+/* Body background and text color */
 body {
-    /*background-color: #0d1116;*/
     background-color: #0b090c;
     color: #ffffff;
 }
 
 /* --- NavBar --- */
 
+/* General navbar styles */
 nav {
     z-index: 1;
-
     margin: auto 20px;
-
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-
     border-bottom: #ffffff 1px solid;
-
     position: sticky;
     top: 0;
-
     background-color: #0b090cb0;
-
     font-weight: 700;
 }
 
+/* Navbar logo container */
 nav .nav_logo {
     display: flex;
     flex-direction: row;
@@ -53,24 +53,28 @@ nav .nav_logo {
     justify-content: space-evenly;
 }
 
+/* Navbar logo image */
 nav .nav_logo img {
     padding: 10px;
     width: 40px;
 }
 
+/* Navbar links */
 nav a {
     padding: 20px;
-
     font-size: 1.2em;
 }
 
 /* --- Responsive NavBar --- */
+
+/* Menu icon for mobile view */
 .nav_menu_icon {
     display: none;
     flex-direction: column;
     cursor: pointer;
 }
 
+/* Lines in the menu icon */
 .nav_menu_icon_line {
     width: 25px;
     height: 3px;
@@ -79,26 +83,32 @@ nav a {
     transition: all 0.3s ease;
 }
 
+/* Navbar links container */
 .nav_links {
     display: flex;
     transition: max-height 0.3s ease-out;
     overflow: hidden;
 }
 
+/* Show class for navbar */
 nav.show {
     max-height: 100vh;
 }
 
+/* Show class for navbar links */
 .nav_links.show {
     max-height: 100vh; /* Adjust this value based on the height of your menu */
     width: 100%;
 }
 
+/* Media query for screens with max-width of 768px */
 @media (max-width: 768px) {
+    /* Display menu icon */
     .nav_menu_icon {
         display: flex;
     }
 
+    /* Navbar styles for mobile view */
     nav {
         background-color: #0b090cf7;
         position: fixed;
@@ -106,24 +116,27 @@ nav.show {
         width: calc(100vw - 40px);
     }
 
+    /* Navbar links styles for mobile view */
     .nav_links {
         flex-direction: column;
         width: 100%;
         max-height: 0;
     }
 
+    /* Navbar links anchor tags styles for mobile view */
     .nav_links a {
         padding: 5vh 0px;
         text-align: center;
         width: 100%;
-
         font-size: 2em;
     }
 
+    /* Show class for navbar links in mobile view */
     .nav_links.show {
         display: flex;
     }
 
+    /* Transformations for menu icon lines when open */
     .nav_menu_icon.open .nav_menu_icon_line:nth-child(1) {
         transform: rotate(45deg) translate(7.5px, 7.5px);
     }
@@ -136,6 +149,7 @@ nav.show {
         transform: rotate(-45deg) translate(7.5px, -7.5px);
     }
 
+    /* Margin for main content in mobile view */
     main {
         margin-top: 100px;
     }
@@ -146,60 +160,67 @@ nav.show {
 
 /* --- Main Content --- */
 
+/* Main content container */
 main {
     margin: 20px;
 }
 
+/* Carousel container */
 .carousel {
     padding: 50px;
 }
 
+/* Carousel images container */
 .carousel_img {
-
     height: calc((1 - 4/7)*100vw);
-
     overflow: hidden;
-
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
     background-color: #000000;
-
     border-radius: 20px;
 }
 
+/* Carousel images */
 .carousel_img img {
     width: -webkit-fill-available;
-
     opacity: 0.5;
 }
 
+/* Carousel text container */
 .carousel_text {
     position: absolute;
     right: 25%;
     left: 25%;
     top: 25%;
-
     opacity: 1;
-
     display: grid;
     justify-items: center;
     justify-content: center;
-
     text-shadow: 3px 3px 5px black;
 }
 
+/* Carousel heading */
 .carousel_text h1 {
     font-size: 5em;
     text-align: center;
 }
 
+/* Carousel paragraph */
 .carousel_text p {
     font-size: 2em;
     text-align: center;
+}
+
+/* Media query for screens with max-width of 768px */
+@media (max-width: 768px) {
+    /* Adjust carousel margin and padding for mobile view */
+    .carousel {
+        margin-top: 100px; /* Add top margin to the carousel */
+        padding: 20px; /* Reduce padding for the carousel */
+    }
 }
 
 /* --- End of Main Content --- */
