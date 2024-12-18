@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght,ROND@100..900,0..100&display=swap');
+
+html, head,  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Doto", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+a:hover {
+    color: #606060;
+}
+
+body {
+    /*background-color: #0d1116;*/
+    background-color: #0b090c;
+    color: #ffffff;
+}
+
+/* --- NavBar --- */
+
+nav {
+    margin: auto 20px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: #ffffff 1px solid;
+
+    position: sticky;
+    top: 0;
+
+    background-color: #000000b0;
+
+    font-weight: 700;
+}
+
+nav .nav_logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+nav .nav_logo img {
+    padding: 10px;
+    width: 40px;
+}
+
+nav a {
+    padding: 20px;
+
+    font-size: 1.2em;
+}
+
+/* --- End of NavBar --- */
+
+/* --- Main Content --- */
+
+main {
+    margin: 20px;
+}
+
+.carousel {
+    padding: 50px;
+}
+
+.carousel_img {
+
+    height: calc((1 - 4/7)*100vw);
+
+    overflow: hidden;
+
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #000000;
+}
+
+.carousel_img img {
+    width: -webkit-fill-available;
+
+    opacity: 0.5;
+}
+
+.carousel_text {
+    position: absolute;
+    right: 25%;
+    left: 25%;
+    top: 25%;
+
+    opacity: 1;
+
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+
+    text-shadow: 3px 3px 5px black;
+}
+
+.carousel_text h1 {
+    font-size: 5em;
+    text-align: center;
+}
+
+.carousel_text p {
+    font-size: 2em;
+    text-align: center;
+}
+
+/* --- End of Main Content --- */
