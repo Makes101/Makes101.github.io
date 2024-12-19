@@ -203,7 +203,7 @@ main {
 }
 
 /* Carousel text container */
-.carousel_text {
+#head_text {
     position: absolute;
     right: 25%;
     left: 25%;
@@ -216,14 +216,41 @@ main {
 }
 
 /* Carousel heading */
-.carousel_text h1 {
+#head_text h1 {
     font-size: 5em;
     text-align: center;
 }
 
 /* Carousel paragraph */
-.carousel_text p {
+#head_text p {
     font-size: 2em;
+    text-align: center;
+}
+
+/* Carousel text container */
+#scroll_text {
+    z-index: -1;
+
+    position: absolute;
+    right: 25%;
+    left: 25%;
+    top: 30%;
+    opacity: 0;
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+    text-shadow: 3px 3px 5px black;
+}
+
+/* Carousel heading */
+#scroll_text h1 {
+    /*font-size: 5em;*/
+    text-align: center;
+}
+
+/* Carousel paragraph */
+#scroll_text p {
+    /*font-size: 2em;*/
     text-align: center;
 }
 
@@ -233,6 +260,10 @@ main {
     .carousel {
         margin-top: 100px; /* Add top margin to the carousel */
         padding: 20px; /* Reduce padding for the carousel */
+    }
+
+    .carousel_img {
+        height: auto;
     }
 }
 
