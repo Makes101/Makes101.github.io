@@ -60,6 +60,8 @@ nav .nav_logo {
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+
+    padding: 0 !important;
 }
 
 /* Navbar logo image */
@@ -181,6 +183,7 @@ main {
 /* Carousel container */
 .carousel {
     /*padding: 50px;*/
+    background-color: #0b090c;
 }
 
 /* Carousel images container */
@@ -192,14 +195,14 @@ main {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: #0b090c;
     border-radius: 20px;
+
+    opacity: 0.5;
 }
 
 /* Carousel images */
 .carousel_img img {
     width: -webkit-fill-available;
-    opacity: 0.5;
 }
 
 /* Carousel text container */
@@ -232,9 +235,9 @@ main {
     z-index: -1;
 
     position: absolute;
-    right: 25%;
-    left: 25%;
-    top: 30%;
+    right: 70px;
+    left: 70px;
+    top: 35%;
     opacity: 0;
     display: grid;
     justify-items: center;
@@ -246,6 +249,7 @@ main {
 #scroll_text h1 {
     /*font-size: 5em;*/
     text-align: center;
+    margin-bottom: 0;
 }
 
 /* Carousel paragraph */
@@ -256,14 +260,25 @@ main {
 
 /* Media query for screens with max-width of 768px */
 @media (max-width: 768px) {
+
+    main {
+        margin: 20px;
+    }
+
     /* Adjust carousel margin and padding for mobile view */
     .carousel {
+        margin: 20px; /* Reduce padding for the carousel */
         margin-top: 100px; /* Add top margin to the carousel */
-        padding: 20px; /* Reduce padding for the carousel */
+        
     }
 
     .carousel_img {
         height: auto;
+    }
+
+    #scroll_text {
+        left: 20px;
+        right: 20px;
     }
 }
 
