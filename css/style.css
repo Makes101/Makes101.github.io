@@ -277,6 +277,7 @@ main {
     }
 
     #scroll_text {
+        top: 40%;
         left: 20px;
         right: 20px;
     }
