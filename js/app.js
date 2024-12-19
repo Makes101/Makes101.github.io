@@ -9,3 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
         navMenuIcon.classList.toggle('open');
     });
 });
+
+window.onscroll = function() {
+    const logo = document.getElementById('logo');
+
+    logo.style.transform = "rotate(" + window.scrollY + "deg)";
+};
