@@ -346,10 +346,17 @@ nav.show {
     }
 
     #scroll_box {
-        margin-top: 0;
         top: 40%;
         left: 20px;
         right: 20px;
+    }
+
+    #scroll_box .scroll_btn {
+        margin-top: 0;
+    }
+
+    #scroll_box .scroll_btn a {
+        width: -webkit-fill-available;
     }
 }
 
