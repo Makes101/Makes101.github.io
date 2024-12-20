@@ -168,7 +168,7 @@ nav.show {
     }
 
     /* Margin for main content in mobile view */
-    main {
+    #hero {
         margin-top: 100px;
     }
 }
@@ -179,7 +179,7 @@ nav.show {
 /* --- Main Content --- */
 
 /* Main content container */
-main {
+#hero {
     margin: 70px;
 }
 
@@ -313,7 +313,7 @@ main {
 /* Media query for screens with max-width of 768px */
 @media (max-width: 768px) {
 
-    main {
+    #hero {
         margin: 20px;
     }
 
@@ -336,4 +336,15 @@ main {
     }
 }
 
+.carousel_ctrl {
+
+
+    height: 200px;
+
+    transform: translateY(325px);
+    
+    background: radial-gradient(ellipse at 50% 0%, #321365 10%, #1f0c3c 70%);
+}
+
 /* --- End of Main Content --- */
+

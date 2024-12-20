@@ -16,8 +16,17 @@ function logoRoll() {
     logo.style.transform = "rotate(" + window.scrollY + "deg)";
 }
 
-function headAnimation() {
+function scrollDown() {
     const scrollDist = 200;
+
+    if (window.scrollY <= scrollDist) {
+        headAnimation(window.scrollY, scrollDist);
+    } else {
+        headAnimation(scrollDist, scrollDist);
+    }
+}
+
+function headAnimation(scroll, scrollDist) {
 
     const carousel = document.querySelector('.carousel');
     const carousel_img = document.querySelector('.carousel_img');
@@ -25,32 +34,32 @@ function headAnimation() {
     const head_text = document.getElementById('head_text');
     const scroll_box = document.getElementById('scroll_box');
 
-    if (window.scrollY <= scrollDist) {
+    if (scroll <= scrollDist) {
 
         if (window.innerWidth <= 768) {
             carousel_img_img.forEach(img => {
-                img.style.width = 100 + (window.scrollY / scrollDist * 50) + "%";
+                img.style.width = 100 + (scroll / scrollDist * 50) + "%";
             });
         } else {
             carousel_img_img.forEach(img => {
-                img.style.width = 100 + (window.scrollY / scrollDist * 50 * 7/4) + "%";
+                img.style.width = 100 + (scroll / scrollDist * 50 * 7/4) + "%";
             });
-            carousel.style.margin = '0 '+ window.scrollY / scrollDist * 15 + '%';
+            carousel.style.margin = '0 '+ scroll / scrollDist * 15 + '%';
         }
 
-        carousel_img.style.opacity = 0.5 + (window.scrollY/scrollDist * 0.5);
-        carousel.style.transform = "translateY(" + window.scrollY*2.25 + "px)";
+        carousel_img.style.opacity = 0.5 + (scroll/scrollDist * 0.5);
+        carousel.style.transform = "translateY(" + scroll*2.25 + "px)";
 
-        carousel.style.background = "radial-gradient(rgb(151 149 247 / " + (25 + window.scrollY/scrollDist * 75) + "%), rgb(151 149 247 / " + (window.scrollY/scrollDist * 25) + "%)) border-box";
-        carousel.style.boxShadow = "rgba(151, 149, 247, " + window.scrollY/scrollDist * 0.5 + ") 0px 0px 50px";
+        carousel.style.background = "radial-gradient(rgb(151 149 247 / " + (25 + scroll/scrollDist * 75) + "%), rgb(151 149 247 / " + (scroll/scrollDist * 25) + "%)) border-box";
+        carousel.style.boxShadow = "rgba(151, 149, 247, " + scroll/scrollDist * 0.5 + ") 0px 0px 50px";
 
-        head_text.style.opacity = 1 - (window.scrollY/scrollDist);
-        head_text.style.transform = "translateY(" + -window.scrollY*2 + "px)";
+        head_text.style.opacity = 1 - (scroll/scrollDist);
+        head_text.style.transform = "translateY(" + -scroll*2 + "px)";
 
-        scroll_box.style.opacity = window.scrollY/scrollDist;
+        scroll_box.style.opacity = scroll/scrollDist;
     }
 
-    if (window.scrollY >= scrollDist - 25) {
+    if (scroll >= scrollDist - 25) {
         scroll_box.classList.add('show');
     } else {
         scroll_box.classList.remove('show');
@@ -63,5 +72,5 @@ window.onscroll = function() {
     
     logoRoll();
 
-    headAnimation();
+    scrollDown();
 };
