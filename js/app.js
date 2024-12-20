@@ -71,7 +71,6 @@ function headAnimation(scroll, scrollDist) {
 }
 
 window.onscroll = function() {
-    
     logoRoll();
 
     scrollDown();
@@ -79,15 +78,37 @@ window.onscroll = function() {
 
 function setupPageClickHandlers() {
     const pages = document.querySelectorAll('.page');
+    const imgs = document.querySelectorAll('.carousel_img img');
 
-    pages.forEach(page => {
+    pages_imgs = [pages, imgs];
+
+    //console.log(pages_imgs);
+
+    for (let i = 0; i < pages_imgs[0].length; i++) {
+        
+        pages_imgs[0][i].addEventListener('click', function() {
+            // Remove the 'show' class from all elements with the 'page' class
+            pages_imgs[0].forEach(p => p.classList.remove('show'));
+            // Add the 'show' class to the clicked element
+            pages_imgs[0][i].classList.add('show');
+
+            pages_imgs[1].forEach(img => img.classList.remove('show'));
+
+            pages_imgs[1][i].classList.add('show');
+        });
+
+    }
+
+    /*pages.forEach(page => {
         page.addEventListener('click', function() {
             // Remove the 'show' class from all elements with the 'page' class
             pages.forEach(p => p.classList.remove('show'));
             // Add the 'show' class to the clicked element
             page.classList.add('show');
+
+            
         });
-    });
+    });*/
 }
 
 document.addEventListener('DOMContentLoaded', function() {

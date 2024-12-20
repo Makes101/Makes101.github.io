@@ -220,6 +220,19 @@ nav.show {
 /* Carousel images */
 .carousel_img img {
     width: -webkit-fill-available;
+    transition: opacity 0.5s ease;
+    display: none;
+    opacity: 0;
+}
+
+.carousel_img img.show {
+    display: block;
+    animation: fade 1.5s forwards;
+}
+
+@keyframes fade {
+    from {opacity: 0.4} 
+    to {opacity: 1}
 }
 
 /* Carousel text container */
@@ -289,8 +302,7 @@ nav.show {
 #scroll_box .scroll_btn {
     margin-top: 25px;
 
-    display: flex
-;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
@@ -366,7 +378,7 @@ nav.show {
 
     height: 200px;
 
-    transform: translateY(415px);
+    transform: translateY(355px);
 
     background: radial-gradient(ellipse at 50% 0%, #321365 10%, #1f0c3c 70%);
 }
@@ -450,6 +462,10 @@ nav.show {
 }
 
 @media (max-width: 768px) {
+
+    .carousel_ctrl {
+        transform: translateY(415px);
+    }
 
     .carousel_ctrl #pages {
         justify-content: normal;
