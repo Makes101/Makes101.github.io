@@ -359,7 +359,7 @@ nav.show {
 
     height: 200px;
 
-    transform: translateY(325px);
+    transform: translateY(475px);
 
     background: radial-gradient(ellipse at 50% 0%, #321365 10%, #1f0c3c 70%);
 }

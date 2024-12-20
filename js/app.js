@@ -17,7 +17,7 @@ function logoRoll() {
 }
 
 function scrollDown() {
-    const scrollDist = 200;
+    const scrollDist = 250;
 
     if (window.scrollY <= scrollDist) {
         headAnimation(window.scrollY, scrollDist);
