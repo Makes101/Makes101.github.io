@@ -70,8 +70,6 @@ function headAnimation(scroll, scrollDist) {
     }
 }
 
-document.addEventListener('DOMContentLoaded', menuIcon);
-
 window.onscroll = function() {
     
     logoRoll();
