@@ -258,7 +258,7 @@ main {
 }
 
 #scroll_box.show {
-    z-index: 1;
+    z-index: 0;
 }
 
 /* Carousel heading */
@@ -285,16 +285,29 @@ main {
     margin-top: 25px;
 }
 
-#scroll_box .scroll_btn a {
+#scroll_box .scroll_btn #contact {
     padding: 0.5rem 2rem;
     border-radius: 0.5rem;
     background: green;
     transition: background 0.3s ease;
 }
 
-#scroll_box .scroll_btn a:hover {
+#scroll_box .scroll_btn #contact:hover {
     color: #ffffff;
     background: rgb(0, 70, 0);
+}
+
+#scroll_box .scroll_btn #explore {
+    padding: 0.5rem 2rem;
+    border-radius: 0.5rem;
+    background: #6a00ff21;
+    transition: background 0.3s ease;
+    border: 1px solid white;
+}
+
+#scroll_box .scroll_btn #explore:hover {
+    color: #ffffff;
+    background: #ffffff21;
 }
 
 /* Media query for screens with max-width of 768px */
