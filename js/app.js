@@ -34,6 +34,8 @@ function headAnimation(scroll, scrollDist) {
     const head_text = document.getElementById('head_text');
     const scroll_box = document.getElementById('scroll_box');
 
+    const carousel_ctrl = document.querySelector('.carousel_ctrl');
+
     if (scroll <= scrollDist) {
 
         if (window.innerWidth <= 768) {
@@ -48,7 +50,7 @@ function headAnimation(scroll, scrollDist) {
         }
 
         carousel_img.style.opacity = 0.5 + (scroll/scrollDist * 0.5);
-        carousel.style.transform = "translateY(" + scroll*2.25 + "px)";
+        carousel.style.transform = "translateY(" + scroll*2.35 + "px)";
 
         carousel.style.background = "radial-gradient(rgb(151 149 247 / " + (25 + scroll/scrollDist * 75) + "%), rgb(151 149 247 / " + (scroll/scrollDist * 25) + "%)) border-box";
         carousel.style.boxShadow = "rgba(151, 149, 247, " + scroll/scrollDist * 0.5 + ") 0px 0px 50px";
@@ -57,6 +59,8 @@ function headAnimation(scroll, scrollDist) {
         head_text.style.transform = "translateY(" + -scroll*2 + "px)";
 
         scroll_box.style.opacity = scroll/scrollDist;
+
+        carousel_ctrl.style.opacity = (scroll/scrollDist);
     }
 
     if (scroll >= scrollDist - 25) {
