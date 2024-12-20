@@ -346,6 +346,7 @@ nav.show {
     }
 
     #scroll_box {
+        margin-top: 0;
         top: 40%;
         left: 20px;
         right: 20px;
