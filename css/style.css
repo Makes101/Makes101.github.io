@@ -8,6 +8,11 @@ html, head, body {
     font-family: "Doto", serif;
     font-optical-sizing: auto;
     font-style: normal;
+
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* Internet Explorer/Edge */
+    user-select: none;         /* Standard */
 }
 
 /* Style for anchor tags */
@@ -283,6 +288,17 @@ nav.show {
 
 #scroll_box .scroll_btn {
     margin-top: 25px;
+
+    display: flex
+;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+}
+
+#scroll_box .scroll_btn a {
+    margin: 5px 15px;
 }
 
 #scroll_box .scroll_btn #contact {
@@ -337,13 +353,112 @@ nav.show {
 }
 
 .carousel_ctrl {
-
+    display: flex;
+    justify-content: center;
 
     height: 200px;
 
     transform: translateY(325px);
-    
+
     background: radial-gradient(ellipse at 50% 0%, #321365 10%, #1f0c3c 70%);
+}
+
+.carousel_ctrl #pages {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+    align-items: center;
+    padding: 10px;
+    border-radius: 50px;
+    border: 1px solid white;
+    height: 40px;
+    width: calc(10* 1.2rem* 2 + 11* 20px);
+    margin: 20px;
+    box-shadow: 0px 0px 10px white;
+    background: radial-gradient(ellipse, #1d0043 60%, #412b5d);
+    justify-content: center;
+}
+
+
+
+/* Keyframes for background-image transition */
+@keyframes backgroundFade {
+    0% {
+        background-image: radial-gradient(circle, rgba(65, 43, 93, 0), rgba(65, 43, 93, 0));
+    }
+    12.5% {
+        background-image: radial-gradient(circle, rgba(65, 43, 93, 0.025), rgba(65, 43, 93, 0.1));
+    }
+    25% {
+        background-image: radial-gradient(circle, rgba(65, 43, 93, 0.05), rgba(65, 43, 93, 0.2));
+    }
+    37.5% {
+        background-image: radial-gradient(circle, rgba(65, 43, 93, 0.075), rgba(65, 43, 93, 0.3));
+    }
+    50% {
+        background-image: radial-gradient(circle, rgba(65, 43, 93, 0.1), rgba(65, 43, 93, 0.4));
+    }
+    62.5% {
+        background-image: radial-gradient(circle, rgba(65, 43, 93, 0.125), rgba(65, 43, 93, 0.5));
+    }
+    75% {
+        background-image: radial-gradient(circle, rgba(65, 43, 93, 0.15), rgba(65, 43, 93, 0.6));
+    }
+    87.5% {
+        background-image: radial-gradient(circle, rgba(65, 43, 93, 0.175), rgba(65, 43, 93, 0.7));
+    }
+    100% {
+        background-image: radial-gradient(circle, rgba(65, 43, 93, 0.2), rgba(65, 43, 93, 0.8));
+    }
+}
+
+.carousel_ctrl #pages .page {
+    padding: 7.5px 15px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    background-image: transparent;
+    margin: 0px 5px;
+    box-shadow: none;
+    border: none;
+    transition: box-shadow 0.3s ease, border 0.3s ease;
+
+    cursor: pointer;
+}
+
+.carousel_ctrl #pages .page:hover {
+    animation: backgroundFade 0.3s forwards;
+    box-shadow: none;
+    border: none;
+}
+
+.carousel_ctrl #pages .page.show {
+    border: 1px solid white;
+    box-shadow: 0px 0px 5px white;
+    background-image: radial-gradient(circle, rgba(65, 43, 93, 0.2), rgba(65, 43, 93, 0.8));
+}
+
+@media (max-width: 768px) {
+
+    .carousel_ctrl #pages {
+        justify-content: normal;
+    }
+    /* Overlay effect on #pages */
+    .carousel_ctrl #pages::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: calc(100% - 40px);
+        height: 60px;
+        background: radial-gradient(ellipse, transparent 50%, #00000091);
+        border-radius: 50px;
+        pointer-events: none;
+        margin: 20px;
+    }
 }
 
 /* --- End of Main Content --- */

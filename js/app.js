@@ -74,3 +74,22 @@ window.onscroll = function() {
 
     scrollDown();
 };
+
+function setupPageClickHandlers() {
+    const pages = document.querySelectorAll('.page');
+
+    pages.forEach(page => {
+        page.addEventListener('click', function() {
+            // Remove the 'show' class from all elements with the 'page' class
+            pages.forEach(p => p.classList.remove('show'));
+            // Add the 'show' class to the clicked element
+            page.classList.add('show');
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    menuIcon();
+
+    setupPageClickHandlers();
+});
