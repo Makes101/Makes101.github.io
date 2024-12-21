@@ -79,8 +79,9 @@ window.onscroll = function() {
 function setupPageClickHandlers() {
     const pages = document.querySelectorAll('.page');
     const imgs = document.querySelectorAll('.carousel_img img');
+    const txt = document.querySelectorAll('.carousel_txt');
 
-    pages_imgs = [pages, imgs];
+    pages_imgs = [pages, imgs, txt];
 
     //console.log(pages_imgs);
 
@@ -95,6 +96,9 @@ function setupPageClickHandlers() {
             pages_imgs[1].forEach(img => img.classList.remove('show'));
 
             pages_imgs[1][i].classList.add('show');
+
+            pages_imgs[2].forEach(txt => txt.classList.remove('show'));
+            pages_imgs[2][i].classList.add('show');
         });
 
     }
